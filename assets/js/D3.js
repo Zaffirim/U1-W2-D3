@@ -217,8 +217,8 @@ if (crewMass < 500) {
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
 
-for(i = 0; i < starWarsCharacters.length; i++) {
-  if(starWarsCharacters[i].gender === "n/a"){
+for (i = 0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].gender === "n/a") {
     starWarsCharacters[i].gender = "robot";
   }
 }
@@ -230,7 +230,21 @@ console.log(starWarsCharacters)
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
+console.log(charactersNames.length)
+for(i = 0; i < charactersNames.length; i++) {
+  for(let j = 0; j < femaleCharacters.length; j++) {
+    if(charactersNames[i] == femaleCharacters[j].name){
+      charactersNames.splice(i, 1);
+    }
+  }
+  
+}
+console.log(charactersNames.length)
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+
+const indiceRandom = Math.floor(Math.random() * starWarsCharacters.length)
+
+console.log('il personaggio si chiama ' + starWarsCharacters[indiceRandom].name + ', è alto' + starWarsCharacters[indiceRandom].height + ' e pesa' + starWarsCharacters[indiceRandom].mass)
